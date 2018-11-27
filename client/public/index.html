@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <style>
+      body{
+        background-color: white;
+        color: darkgreen;
+      }
+      form {
+        padding-top: 20px;
+      }
+      .groceryListLink {
+        float: right;
+        padding-top: 10px;
+        padding-right:15px;
+      }
+
+      .marketListItem {
+        text-align: left;
+      }
+      header {
+        text-align: center;
+        border-bottom: solid;
+      }
+      .main {
+        background-color: lightgray;
+      }
+
+      .searchResults {
+        color: navy;
+      }
+
+      .groceryForm {
+        max-width: 820px;
+        min-width: 820px;
+        width: 820px;
+      }
+
+      .groceryList {
+          text-align: left;
+        list-style-position: inside;
+      }
+
+      .combinedGroceryListLink {
+        float: right;
+        padding-top: 10px;
+        padding-right:15px;
+      }
+
+      .groceryItem {
+        padding-left: 600px;
+
+      }
+
+      .groceryButton {
+        margin-left: 15px;
+      }
+
+      .marketSearchandList {
+        max-width: 820px;
+        min-width: 820px;
+        width: 820px;
+      }
+
+      .daysOpen {
+        color: navy;
+      }
+
+      li {
+        text-align: left;
+        list-style-position: inside;
+        padding-right: 20px;
+      }
+
+      .marketSort {
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      .sortedByMarket {
+        list-style: circle;
+        list-style-position: inside;
+        padding-left: 20px;
+      }
+
+      .sortGroceries {
+        display: inline;
+        padding-left: 8px;
+        border-right: dotted;
+        border-width: 1.5px;
+        padding-right: 8px;
+        font-size: 20px;
+        color: navy;
+      }
+
+      .sortDay {
+        color: navy;
+        display: inline;
+        padding-left: 8px;
+        font-size: 20px;
+      }
+
+      .showMarketNames {
+        font-size: 20px;
+        display: inline;
+        border-right: dotted;
+        border-width: 1.5px;
+        padding-right: 8px;
+        color: navy;
+      }
+
+      .noMarketsFound {
+        font-size: 22px;
+        color: red;
+      }
+
+      .noGroceries {
+        font-size: 22px;
+        color: navy;
+      }
+
+    </style>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <header>
+      <h1>Find A Farmer's Market! </h1>
+    </header>
+    <div id="root" class="main"></div>
+
+
+  </body>
+</html>
