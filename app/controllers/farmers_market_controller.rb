@@ -1,0 +1,20 @@
+
+class FarmersMarketController < ApplicationController
+
+  def index
+      render(
+        status: 200,
+        json: FarmersMarket
+      )
+  end
+
+  def create
+    market = FarmersMarket.create(market_params)
+  end
+
+  def market_params
+    params.require(:farmers_market).permit(:facilityname, :borough, :address, :zipcode, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
+  end
+
+
+end
