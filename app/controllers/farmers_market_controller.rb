@@ -13,7 +13,7 @@ class FarmersMarketController < ApplicationController
   end
 
   def market_params
-    params.require(:farmers_market).permit(:facilityname, :borough, :address, :zipcode, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
+    params.require(:farmers_market).permit(:facilityname, :address, :borough, :zipcode, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
   end
 
 
