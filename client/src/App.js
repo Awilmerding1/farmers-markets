@@ -16,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>{console.log(this.props)}</div>
         <Router>
       		<React.Fragment>
           	<Route path="/farmersmarkets" component={FarmersMarketsContainer }/>
