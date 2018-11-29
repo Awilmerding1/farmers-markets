@@ -7,9 +7,11 @@ gem 'foreman', '~> 0.82.0'
 gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'faraday'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 gem 'activerecord'
+gem 'pry'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

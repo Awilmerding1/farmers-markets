@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faraday'
+require 'pry'
+
+def apidata
+
+  data = Faraday.get 'https://data.cityofnewyork.us/resource/94pk-v63f.json'
+  parseddata = JSON.parse(data.body)
+  parseddata.map do |market|
+    FarmersMarket.create(facilityname: market["facilityname"], address: market["address"], borough: market["borough"], zipcode: market["zipcode"], monday: market["monday"], tuesday: market["tuesday"], wednesday: market["wednesday"], friday: market["friday"], saturday: market["saturday"], sunday: market["sunday"])
+  end
+
+end
+
+apidata
