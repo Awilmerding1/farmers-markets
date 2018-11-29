@@ -1,10 +1,10 @@
 
-class FarmersMarketController < ApplicationController
+class FarmersMarketsController < ApplicationController
 
   def index
       render(
         status: 200,
-        json: FarmersMarket
+        json: FarmersMarket.all
       )
   end
 

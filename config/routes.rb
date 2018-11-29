@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   scope '/api' do
-      resources :farmers_market
+      resources :farmers_markets
     end
 end
