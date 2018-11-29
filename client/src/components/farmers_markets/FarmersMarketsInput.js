@@ -53,7 +53,6 @@ class FarmersMarketsInput extends Component {
   this.props.handleSubmit(this.state)
   this.props.handleSearch(Object.keys(this.state).filter(m => m !== "search"), this.state)
   this.state = {search: ""}
-  console.log(this.state)
   this.searchParams = []
   }
 

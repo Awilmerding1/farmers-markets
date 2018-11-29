@@ -1,11 +1,17 @@
-
+require 'pry'
 class FarmersMarketsController < ApplicationController
 
   def index
-      render(
-        status: 200,
-        json: FarmersMarket.all
+    q = params[:q]
+
+    if q === nil
+      render status: 200, json: FarmersMarket.all
+    else
+        render(
+          status: 200,
+          json: FarmersMarket.where("zipcode = ?", params[:q])
       )
+    end
   end
 
   def create

@@ -7,7 +7,7 @@ export function fetchFarmersMarkets() {
     accept: 'application/json',
   })
   .then(response => { return response.json()})
-  .then(responseJSON => { console.log(responseJSON); return responseJSON})
+  .then(responseJSON => {return responseJSON})
   .then(farmersMarkets => dispatch({ type: 'FETCH_FARMERS_MARKETS', payload: farmersMarkets }))
 }
 }
