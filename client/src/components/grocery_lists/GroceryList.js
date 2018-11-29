@@ -10,9 +10,11 @@ const GroceryList = ({groceryList, marketId, deleteGroceryItem}) => {
       })
 
     return (
+
       <ul className="groceryList">
         {mapGroceryList}
       </ul>
+
     );
 };
 
