@@ -16,7 +16,7 @@ class GroceryListsInput extends Component {
 
  handleOnSubmit(event) {
   event.preventDefault();
-  // this.props.addGroceryItem({text: this.state.text, marketId: this.props.marketId });
+  this.props.addGroceryItem({description: this.state.text, farmers_market_id: this.props.marketId });
   this.setState({
     text: '',
   });

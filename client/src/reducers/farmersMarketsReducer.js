@@ -6,18 +6,17 @@ export default function farmersMarketsReducer(state ={loading:true, farmersMarke
     case 'LOADING_FARMERS_MARKETS':
        return {...state, loading: true}
     case 'FETCH_FARMERS_MARKETS':
-    const setIds = action.payload.map(market => {if(!market.id) {market.id = cuidFn()}})
       return {...state, farmersMarkets: action.payload, loading: false}
+      case 'FETCH_GROCERY_ITEMS':
+        return {...state, groceryList: action.payload, loading: false }
       case 'ADD_GROCERY_ITEM':
-        const groceryItem = { text: action.groceryItem.text, marketId: action.groceryItem.marketId, id: cuidFn() };
-        return { ...state,
-          groceryList: [...state.groceryList, groceryItem]
-        }
+      debugger;
+        const groceryItem = { description: action.groceryItem.description, farmers_market_id: action.groceryItem.farmers_market_id};
+        return { ...state, groceryList: [...state.groceryList, groceryItem]}
       case 'DELETE_GROCERY_ITEM':
         const groceryList = state.groceryList.filter(groceryItem => groceryItem.id !== action.id);
         return {...state, groceryList }
-      case 'FETCH_GROCERY_ITEMS':
-        return {...state, groceryList: action.payload, loading: false }
+
     default:
       return state;
 }

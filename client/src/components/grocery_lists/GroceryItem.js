@@ -12,14 +12,14 @@ const GroceryItem = ({groceryItem, deleteGroceryItem }) => {
       headers: {
           'Content-Type': 'application/json'
       },
-      body: JSON.stringify({description: groceryItem.text, farmers_market_id: groceryItem.marketId})
+      body: JSON.stringify({description: groceryItem.description, farmers_market_id: groceryItem.farmers_market_id})
   })
   }
 
 return (
   <div>
     <li className="groceryItem">
-      {groceryItem.text}
+      {groceryItem.description}
       <button className="groceryButton" onClick={deleteItem}> Delete </button>
     </li>
   </div>

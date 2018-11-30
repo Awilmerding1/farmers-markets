@@ -19,12 +19,12 @@ class FarmersMarketsList extends Component {
 
   filterMarkets = () => {
     const filtered = this.props.stateMarkets.filter(market => this.mapStateList().includes(market.id))
-    const mapped = filtered.map(market => Object.assign(market, { items: this.props.stateList.filter(item => item.marketId === market.id)}))
+    const mapped = filtered.map(market => Object.assign(market, { items: this.props.stateList.filter(item => item.farmers_market_id === market.id)}))
     return mapped
   }
 
   mapStateList = () => {
-    return this.props.stateList.map(list => list.marketId)
+    return this.props.stateList.map(list => list.farmers_market_id)
   }
 
 hideList = () => {
