@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 class GroceryListsContainer extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchGroceryItems()
   }
 
@@ -14,7 +14,7 @@ class GroceryListsContainer extends Component {
     return (
       <div>
         <div><GroceryListsInput addGroceryItem={this.props.addGroceryItem}  marketId={this.props.farmersMarket.id}/></div>
-        <div><GroceryList groceryList={this.props.groceryList} deleteGroceryItem={this.props.deleteGroceryItem} marketId={this.props.farmersMarket.id}/></div>
+        <div><GroceryList groceryList={this.props.groceryList}  marketId={this.props.farmersMarket.id}/></div>
       </div>
     )
   }
@@ -30,4 +30,4 @@ const mapStateToProps = state => ({ groceryList: state.groceryList })
 	};
 
 
-export default connect(mapStateToProps, {mapDispatchToProps, fetchGroceryItems})(GroceryListsContainer)
+export default connect(mapStateToProps, {fetchGroceryItems})(GroceryListsContainer)

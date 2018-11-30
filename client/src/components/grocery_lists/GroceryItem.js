@@ -6,13 +6,11 @@ const GroceryItem = ({groceryItem, deleteGroceryItem }) => {
 
   const deleteItem = (event) => {
     event.preventDefault()
-    deleteGroceryItem(groceryItem.id)
     fetch('/api/grocery_items/' + groceryItem.id, {
       method: "DELETE",
       headers: {
           'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({description: groceryItem.description, farmers_market_id: groceryItem.farmers_market_id})
+      }
   })
   }
 

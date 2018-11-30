@@ -14,7 +14,7 @@ class GroceryItemsController < ApplicationController
 
   def destroy
     item = GroceryItem.find(params[:id])
-    item.destroy
+    GroceryItem.destroy(params[:id])
   end
 
   def item_params
