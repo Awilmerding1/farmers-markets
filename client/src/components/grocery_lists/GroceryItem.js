@@ -6,8 +6,8 @@ const GroceryItem = ({groceryItem, deleteGroceryItem }) => {
 
   const deleteItem = (event) => {
     event.preventDefault()
-    // deleteGroceryItem(groceryItem.id)
-    fetch('/api/grocery_items/' + groceryItem, {
+    deleteGroceryItem(groceryItem.id)
+    fetch('/api/grocery_items/' + groceryItem.id, {
       method: "DELETE",
       headers: {
           'Content-Type': 'application/json'

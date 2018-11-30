@@ -10,10 +10,9 @@ export default function farmersMarketsReducer(state ={loading:true, farmersMarke
       case 'FETCH_GROCERY_ITEMS':
         return {...state, groceryList: action.payload, loading: false }
       case 'ADD_GROCERY_ITEM':
-      debugger;
         const groceryItem = { description: action.groceryItem.description, farmers_market_id: action.groceryItem.farmers_market_id};
         return { ...state, groceryList: [...state.groceryList, groceryItem]}
-      case 'DELETE_GROCERY_ITEM':
+      case 'DELETE_GROCERY_ITEMS':
         const groceryList = state.groceryList.filter(groceryItem => groceryItem.id !== action.id);
         return {...state, groceryList }
 
