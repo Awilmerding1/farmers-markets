@@ -14,8 +14,6 @@ class CombinedGroceryList extends Component  {
   }
 
   marketsAndItems = () => {
-  let items = this.props.markets.map(market => market.items).flat()
-  let matchItems = this.props.markets.filter(market => market.id === (items.map(item => item.marketId)))
   let marketItems = []
   this.props.markets.map(market => marketItems.push({facilityname: market.facilityname, items: market.items, days: Object.keys(market).filter(key => key === "monday" || key === "tuesday" || key === "wednesday" || key === "thursday" || key === "friday" || key === "saturday" || key === "sunday")}))
   return marketItems

@@ -1,5 +1,5 @@
 import cuid from 'cuid';
-import React, { Component } from 'react';
+import React from 'react';
 import GroceryListsContainer from '../../containers/GroceryListsContainer'
 export const cuidFn = cuid;
 const FarmersMarket = ({farmersMarket}) => {

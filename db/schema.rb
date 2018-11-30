@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_180506) do
+ActiveRecord::Schema.define(version: 2018_11_30_163119) do
 
   create_table "farmers_markets", force: :cascade do |t|
     t.string "facilityname"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 2018_11_28_180506) do
     t.string "friday", default: ""
     t.string "saturday", default: ""
     t.string "sunday", default: ""
+  end
+
+  create_table "grocery_items", force: :cascade do |t|
+    t.string "description"
+    t.integer "farmers_market_id"
   end
 
 end

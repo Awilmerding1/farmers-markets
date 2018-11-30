@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -8,7 +8,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk';
 import farmersMarketsReducer from './reducers/farmersMarketsReducer'
-import FarmersMarketsList from './components/farmers_markets/FarmersMarketsList'
 
 
 const store = createStore(farmersMarketsReducer, applyMiddleware(thunk)

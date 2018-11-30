@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
 import { Route } from 'react-router-dom';
-import GroceryListsContainer from '../../containers/GroceryListsContainer'
-import GroceryListsInput from '../grocery_lists/GroceryListsInput'
 import CombinedGroceryList from '../grocery_lists/CombinedGroceryList'
 import FarmersMarket from './FarmersMarket'
-import FarmersMarkets from './FarmersMarkets'
-import FarmersMarketsContainer from '../../containers/FarmersMarketsContainer';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-import { Redirect } from 'react-router-dom'
 
 class FarmersMarketsList extends Component {
 
@@ -45,7 +39,6 @@ render() {
 
   return (
   <div>
-    <div>{console.log(this.props.stateMarkets)}</div>
     <div>{this.props.stateList.length < 1 ? <p className="noGroceries">Your Grocery List is Empty. Click <Link to={'/farmersmarkets'}>here</Link> to search markets and start your list!</p> : <p></p>}</div>
     <div className="combinedGroceryListLink" ><Link to={'/groceries/list'} style={style} onClick={this.hideList}>View Grocery List</Link></div>
     <div className="combinedGroceryListLink" ><Link to={{pathname: '/farmersmarkets', searchParams: {searchParams}}} style={style} onClick={this.hideList}>Markets</Link></div>

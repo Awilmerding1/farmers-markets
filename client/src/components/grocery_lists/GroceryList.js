@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import GroceryItem from './GroceryItem';
 
 const GroceryList = ({groceryList, marketId, deleteGroceryItem}) => {
@@ -10,7 +10,7 @@ const GroceryList = ({groceryList, marketId, deleteGroceryItem}) => {
       })
 
     return (
-        <div>
+      <div>
       <ul className="groceryList">
         {mapGroceryList}
       </ul>

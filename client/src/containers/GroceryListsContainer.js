@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import GroceryListsInput from '../components/grocery_lists/GroceryListsInput'
 import GroceryList from '../components/grocery_lists/GroceryList'
-import CombinedGroceryList from '../components/grocery_lists/CombinedGroceryList'
+import {fetchGroceryItems} from '../actions/fetchGroceryItems'
 import { connect } from 'react-redux';
 
 class GroceryListsContainer extends Component {
 
+  componentDidMount() {
+    this.props.fetchGroceryItems()
+   }
 
   render() {
     return (
@@ -27,4 +30,4 @@ const mapStateToProps = state => ({ groceryList: state.groceryList })
 	};
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(GroceryListsContainer)
+export default connect(mapStateToProps, {mapDispatchToProps, fetchGroceryItems})(GroceryListsContainer)
