@@ -22,9 +22,7 @@ class FarmersMarketsContainer extends Component {
 
   componentDidMount() {
     this.props.history.push('/farmersmarkets')
-
       this.props.fetchFarmersMarkets()
-  
    }
 
   handleSubmit = (data) => {
