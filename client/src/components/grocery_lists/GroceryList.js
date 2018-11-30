@@ -10,7 +10,7 @@ const GroceryList = ({groceryList, marketId, deleteGroceryItem}) => {
       })
 
     return (
-        <div><p>{console.log(groceryList)}</p>
+        <div>
       <ul className="groceryList">
         {mapGroceryList}
       </ul>

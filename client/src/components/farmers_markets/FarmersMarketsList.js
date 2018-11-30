@@ -45,6 +45,7 @@ render() {
 
   return (
   <div>
+    <div>{console.log(this.props.stateMarkets)}</div>
     <div>{this.props.stateList.length < 1 ? <p className="noGroceries">Your Grocery List is Empty. Click <Link to={'/farmersmarkets'}>here</Link> to search markets and start your list!</p> : <p></p>}</div>
     <div className="combinedGroceryListLink" ><Link to={'/groceries/list'} style={style} onClick={this.hideList}>View Grocery List</Link></div>
     <div className="combinedGroceryListLink" ><Link to={{pathname: '/farmersmarkets', searchParams: {searchParams}}} style={style} onClick={this.hideList}>Markets</Link></div>
