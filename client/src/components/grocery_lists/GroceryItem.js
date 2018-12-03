@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import React from 'react';
 
-const GroceryItem = ({groceryItem, handleDelete}) => {
+const GroceryItem = ({groceryItem, deleteGroceryItem}) => {
 
 
   const deleteItem = (event) => {
@@ -12,7 +12,7 @@ const GroceryItem = ({groceryItem, handleDelete}) => {
           'Content-Type': 'application/json'
       }
     })
-    handleDelete()
+    deleteGroceryItem(groceryItem.id)
   }
 
 return (

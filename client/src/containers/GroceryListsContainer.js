@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import GroceryListsInput from '../components/grocery_lists/GroceryListsInput'
 import GroceryList from '../components/grocery_lists/GroceryList'
 import {fetchGroceryItems} from '../actions/fetchGroceryItems'
+import {addGroceryItem} from '../actions/addGroceryItem'
+
 import { connect } from 'react-redux';
 
 class GroceryListsContainer extends Component {
@@ -10,16 +12,16 @@ class GroceryListsContainer extends Component {
     this.props.fetchGroceryItems()
   }
 
-  addGroceryItem = () => {
+  addGroceryItem = (item) => {
+    this.props.addGroceryItem(item)
     this.props.fetchGroceryItems()
   }
 
-
   render() {
     return (
-      <div><div>{console.log(this.props.groceryList)}</div>
+      <div>
         <div><GroceryListsInput addGroceryItem={this.addGroceryItem}  marketId={this.props.farmersMarket.id}/></div>
-        <div><GroceryList groceryList={this.props.groceryList} fetchGroceryItems={this.props.fetchGroceryItems} marketId={this.props.farmersMarket.id}/></div>
+        <div><GroceryList groceryList={this.props.groceryList} deleteGroceryItem={this.props.deleteGroceryItem} marketId={this.props.farmersMarket.id}/></div>
       </div>
     )
   }
@@ -35,4 +37,4 @@ const mapStateToProps = state => ({ groceryList: state.groceryList })
 	};
 
 
-export default connect(mapStateToProps, {fetchGroceryItems})(GroceryListsContainer)
+export default connect(mapStateToProps, {addGroceryItem, fetchGroceryItems})(GroceryListsContainer)

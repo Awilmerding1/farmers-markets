@@ -10,6 +10,7 @@ class GroceryItemsController < ApplicationController
 
   def create
     item = GroceryItem.create(item_params)
+
   end
 
   def destroy

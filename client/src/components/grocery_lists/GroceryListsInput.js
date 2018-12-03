@@ -19,14 +19,8 @@ class GroceryListsInput extends Component {
   this.setState({
     text: '',
   });
-  fetch('/api/grocery_items', {
-    method: "POST",
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({description: this.state.text, farmers_market_id: this.props.marketId})
-})
-  this.props.addGroceryItem();
+  const item = {description: this.state.text, farmers_market_id: this.props.marketId}
+  this.props.addGroceryItem(item)
 }
 
   render() {
