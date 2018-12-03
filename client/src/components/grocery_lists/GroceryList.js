@@ -1,14 +1,21 @@
 
-import React from 'react';
+import React, { Component } from 'react';
+import {fetchGroceryItems} from '../../actions/fetchGroceryItems'
+
 import GroceryItem from './GroceryItem';
+import { connect } from 'react-redux';
 
-const GroceryList = ({groceryList, marketId, deleteGroceryItem}) => {
+class GroceryList extends Component {
 
-     const associatedMarkets = groceryList.filter(groceryItem => groceryItem.farmers_market_id === marketId);
-      const mapGroceryList = associatedMarkets.map((groceryItem, index) => {
-     return <GroceryItem key={index} groceryItem={groceryItem} deleteGroceryItem={deleteGroceryItem} />
-      })
+    handleDelete = () => {
+      this.props.fetchGroceryItems()
+    }
 
+    render() {
+      const associatedMarkets = this.props.groceryList.filter(groceryItem => groceryItem.farmers_market_id === this.props.marketId);
+       const mapGroceryList = associatedMarkets.map((groceryItem, index) => {
+         return <GroceryItem key={index} handleDelete={this.handleDelete} groceryItem={groceryItem} />
+       })
     return (
       <div>
       <ul className="groceryList">
@@ -16,6 +23,8 @@ const GroceryList = ({groceryList, marketId, deleteGroceryItem}) => {
       </ul>
       </div>
     );
+  }
 };
+
 
 export default GroceryList;

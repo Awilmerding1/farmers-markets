@@ -10,11 +10,16 @@ class GroceryListsContainer extends Component {
     this.props.fetchGroceryItems()
   }
 
+  addGroceryItem = () => {
+    this.props.fetchGroceryItems()
+  }
+
+
   render() {
     return (
-      <div>
-        <div><GroceryListsInput addGroceryItem={this.props.addGroceryItem}  marketId={this.props.farmersMarket.id}/></div>
-        <div><GroceryList groceryList={this.props.groceryList}  marketId={this.props.farmersMarket.id}/></div>
+      <div><div>{console.log(this.props.groceryList)}</div>
+        <div><GroceryListsInput addGroceryItem={this.addGroceryItem}  marketId={this.props.farmersMarket.id}/></div>
+        <div><GroceryList groceryList={this.props.groceryList} fetchGroceryItems={this.props.fetchGroceryItems} marketId={this.props.farmersMarket.id}/></div>
       </div>
     )
   }
