@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import cuid from 'cuid';
+import { Link } from 'react-router-dom';
+
 export const cuidFn = cuid;
 
 class CombinedGroceryList extends Component  {
@@ -55,12 +57,13 @@ render () {
 
 return (
   <div>
+      <div className="combinedGroceryListLink" ><Link to={{pathname: '/farmersmarkets'}}>Markets</Link></div>
     <div className="showMarketNames" onClick={this.clicked}>Show/Hide Market Names</div>
     <div className="sortGroceries" onClick={this.sortGroceries}>{this.state.sortGroceries === 0 ? "Sort By Market" : "Show One List"}</div>
     <div className="sortDay" onClick={this.sortDay}>{this.state.sortDay === 0 ? "Sort By Day" : "Show One List"}</div>
-    <div>{this.state.sortGroceries === 0 && this.state.sortDay === 0 && this.state.markets.map(market => market.items.map(item => <li key={item.id}>{item.text} {!this.state.clicked ? " " :  "- " + market.facilityname}</li>))}</div>
-    <div>{this.state.sortGroceries > this.state.sortDay && this.state.markets.map(market => <p key={cuidFn()} className="marketSort">{market.facilityname} {market.items.map(item => <li className="sortedByMarket" key={cuidFn()}>{item.text}</li>)}</p>)}</div>
-    <div>{this.state.sortDay > this.state.sortGroceries && this.getDays().map(day => <p className="marketSort" key={cuidFn()}>{day.charAt(0).toUpperCase() + day.slice(1)} {this.props.markets.filter(market => market[day]).map(market => <li className="sortedByMarket" key={cuidFn()}>{market.items.map(item => item.text)} {!this.state.clicked ? " " :  "- " + market.facilityname}</li>)}</p>)}</div>
+    <div>{this.state.sortGroceries === 0 && this.state.sortDay === 0 && this.state.markets.map(market => market.items.map(item => <li key={item.id}>{item.description} {!this.state.clicked ? " " :  "- " + market.facilityname}</li>))}</div>
+    <div>{this.state.sortGroceries > this.state.sortDay && this.state.markets.map(market => <p key={cuidFn()} className="marketSort">{market.facilityname} {market.items.map(item => <li className="sortedByMarket" key={cuidFn()}>{item.description}</li>)}</p>)}</div>
+    <div>{this.state.sortDay > this.state.sortGroceries && this.getDays().map(day => <p className="marketSort" key={cuidFn()}>{day.charAt(0).toUpperCase() + day.slice(1)} {this.props.markets.filter(market => market[day]).map(market => <li className="sortedByMarket" key={cuidFn()}>{market.items.map(item => item.description)} {!this.state.clicked ? " " :  "- " + market.facilityname}</li>)}</p>)}</div>
   </div>
 
 )
