@@ -13,7 +13,7 @@ You can install this application by running `git clone https://github.com/Awilme
 
 ## Usage
 
-After cloning the repository, enter the `farmers-Markets` directory on your computer.
+After cloning the repository, enter the `farmers-markets` directory on your computer.
 
 Run `bundle install`.
 
