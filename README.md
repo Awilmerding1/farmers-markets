@@ -13,7 +13,7 @@ You can install this application by running `git clone https://github.com/Awilme
 
 ## Usage
 
-After cloning the repository, enter the `farmers-market` directory on your computer.
+After cloning the repository, enter the `farmers-Markets` directory on your computer.
 
 Run `bundle install`.
 
@@ -26,7 +26,7 @@ Return to the `farmers-market` directory (by entering `cd ..` in the command lin
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/awilmerding1/book-review-app-with-js. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/awilmerding1/farmers-markets. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -34,4 +34,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Destinations project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/awilmerding1/book-review-app-with-js/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Destinations project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/Awilmerding1/farmers-markets/blob/master/CODE_OF_CONDUCT.md).
