@@ -3,6 +3,7 @@ import fetch from 'isomorphic-fetch';
 
 export const addGroceryItem = (item) => {
   return (dispatch) => {
+    dispatch({ type: 'LOADING_ITEMS' })
     fetch('/api/grocery_items', {
       method: "POST",
       headers: {

@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 
   export const deleteGroceryItem = (groceryItem) => {
     return (dispatch) => {
+      dispatch({ type: 'LOADING_ITEMS' })
       fetch('/api/grocery_items/' + groceryItem.id, {
         method: "DELETE",
         headers: {
