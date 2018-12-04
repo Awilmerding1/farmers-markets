@@ -10,9 +10,6 @@ import { connect } from 'react-redux';
 
 class GroceryListsContainer extends Component {
 
-  componentDidMount() {
-    this.props.fetchGroceryItems()
-  }
 
   addGroceryItem = (item) => {
     this.props.addGroceryItem(item)

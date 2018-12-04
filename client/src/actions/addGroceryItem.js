@@ -1,4 +1,3 @@
-import {fetchGroceryItems} from './fetchGroceryItems'
 import fetch from 'isomorphic-fetch';
 
 export const addGroceryItem = (item) => {

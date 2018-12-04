@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 import CombinedGroceryList from '../grocery_lists/CombinedGroceryList'
 import FarmersMarket from './FarmersMarket'
 import { Link } from 'react-router-dom';
@@ -33,15 +34,15 @@ hideList = () => {
 
 
 render() {
-  const { stateMarkets, stateList, searchParams} = this.props;
+  const { stateMarkets, stateList} = this.props;
 
   const style = (this.state.hideLink || this.state.markets.length < 1) ? {display: "none"} : {};
 
   return (
   <div>
-    <div>{this.props.stateList.length < 1 ? <p className="noGroceries">Your Grocery List is Empty. Click <Link to={'/farmersmarkets'}>here</Link> to search markets and start your list!</p> : <p></p>}</div>
+    <div>{this.props.stateList.length < 1 ? <p className="noGroceries">Your Grocery List is Empty. Click <Link to={'/'}>here</Link> to search markets and start your list!</p> : <p></p>}</div>
     <div className="combinedGroceryListLink" ><Link to={'/groceries/list'} style={style} onClick={this.hideList}>View Grocery List</Link></div>
-    <div className="combinedGroceryListLink" ><Link to={{pathname: '/farmersmarkets', searchParams: {searchParams}}} style={style} onClick={this.hideList}>Markets</Link></div>
+    <div className="combinedGroceryListLink" ><Link to={'/'} style={style} onClick={this.hideList}>Markets</Link></div>
     <div>
       <ul>{!this.state.clicked && this.state.markets.map(market => <FarmersMarket key={market.id} farmersMarket={market}/>)} </ul>
     </div>

@@ -3,6 +3,7 @@ import FarmersMarketsInput from '../components/farmers_markets/FarmersMarketsInp
 import FarmersMarkets from '../components/farmers_markets/FarmersMarkets'
 import { Link } from 'react-router-dom';
 import {fetchFarmersMarkets} from '../actions/fetchFarmersMarkets'
+import {fetchGroceryItems} from '../actions/fetchGroceryItems'
 import {filterFetchFarmersMarkets} from '../actions/filterFetchFarmersMarkets'
 
 import { connect } from 'react-redux';
@@ -20,6 +21,7 @@ class FarmersMarketsContainer extends Component {
   componentDidMount() {
     this.props.history.push('/farmersmarkets')
       this.props.fetchFarmersMarkets()
+      this.props.fetchGroceryItems()
    }
 
   handleSubmit = (data) => {
@@ -59,4 +61,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {fetchFarmersMarkets, filterFetchFarmersMarkets})(FarmersMarketsContainer)
+export default connect(mapStateToProps, {fetchFarmersMarkets, fetchGroceryItems, filterFetchFarmersMarkets})(FarmersMarketsContainer)
