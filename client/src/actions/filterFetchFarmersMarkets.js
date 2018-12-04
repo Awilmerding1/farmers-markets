@@ -6,7 +6,7 @@ export function filterFetchFarmersMarkets(data) {
   let filteredMarkets = []
   if (data.search === "" && dataValues.length < 1) {
     return (dispatch) => {
-  	  dispatch({ type: 'LOADING_MARKETS' })
+  	  dispatch({ type: 'LOADING_FARMERS_MARKETS' })
     return fetch('api/farmers_markets')
     .then(response => response.json())
     .then(responseJSON => {return responseJSON})
@@ -14,7 +14,7 @@ export function filterFetchFarmersMarkets(data) {
   }
 }else if (data.search !== "" && dataValues.length > 0) {
   return (dispatch) => {
-	  dispatch({ type: 'LOADING_MARKETS' })
+	  dispatch({ type: 'LOADING_FARMERS_MARKETS' })
   return fetch(`api/farmers_markets?q=${data.search}`)
   .then(response => response.json())
   .then(responseJSON => responseJSON.filter(r => {for(var i=0; i < dataValues.length; i++) {if (r[dataValues[i]] !== null && r[dataValues[i]] !== "") {return filteredMarkets.push(r)}}}))
@@ -23,7 +23,7 @@ export function filterFetchFarmersMarkets(data) {
 }
 } else if (data.search !== "" && dataValues.length < 1){
   return (dispatch) => {
-	  dispatch({ type: 'LOADING_MARKETS' })
+	  dispatch({ type: 'LOADING_FARMERS_MARKETS' })
   return fetch(`api/farmers_markets?q=${data.search}`)
   .then(response => response.json())
   .then(farmersMarkets => dispatch({ type: 'FETCH_FARMERS_MARKETS', payload: farmersMarkets }))
@@ -31,7 +31,7 @@ export function filterFetchFarmersMarkets(data) {
 }
 else {
   return (dispatch) => {
-	  dispatch({ type: 'LOADING_MARKETS' })
+	  dispatch({ type: 'LOADING_FARMERS_MARKETS' })
   return fetch(`api/farmers_markets`)
   .then(response => response.json())
   .then(responseJSON => responseJSON.filter(r => {for(var i=0; i < dataValues.length; i++) {if (r[dataValues[i]] !== null && r[dataValues[i]] !== "") {return filteredMarkets.push(r)}} }))

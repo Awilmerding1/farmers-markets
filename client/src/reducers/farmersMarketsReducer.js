@@ -5,6 +5,8 @@ export default function farmersMarketsReducer(state ={loading:true, farmersMarke
   switch (action.type) {
     case 'LOADING_FARMERS_MARKETS':
        return {...state, loading: true}
+       case 'LOADING_ITEMS':
+          return {...state, loading: true}
     case 'FETCH_FARMERS_MARKETS':
       return {...state, farmersMarkets: action.payload, loading: false}
       case 'FETCH_GROCERY_ITEMS':

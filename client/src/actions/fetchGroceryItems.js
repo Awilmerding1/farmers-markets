@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 export function fetchGroceryItems() {
   return (dispatch) => {
+    dispatch({ type: 'LOADING_ITEMS' })
   return fetch('api/grocery_items', {
     accept: 'application/json',
   })
