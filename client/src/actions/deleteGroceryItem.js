@@ -9,9 +9,10 @@ import fetch from 'isomorphic-fetch';
             'Content-Type': 'application/json'
         }
       })
-        .then(responseJSON => {return responseJSON})
-      .then(groceryItem => {
-        dispatch({ type: 'DELETE_GROCERY_ITEM', payload: groceryItem })})
+      .then(response => dispatch({ type: 'DELETE_GROCERY_ITEM', payload: groceryItem }));
+    //     .then(responseJSON => {return responseJSON})
+    //   .then(groceryItem => {
+    //     dispatch({ type: 'DELETE_GROCERY_ITEM', payload: groceryItem })})
     }
 
     //   .then(
