@@ -10,6 +10,10 @@ class GroceryItemsController < ApplicationController
 
   def create
     item = GroceryItem.create(item_params)
+    render(
+      status: 200,
+      json: item
+  )
 
   end
 

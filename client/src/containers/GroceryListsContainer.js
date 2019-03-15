@@ -13,12 +13,12 @@ class GroceryListsContainer extends Component {
 
   addGroceryItem = (item) => {
     this.props.addGroceryItem(item)
-    this.props.fetchGroceryItems()
+    //this.props.fetchGroceryItems()
   }
 
   deleteGroceryItem = (item) => {
     this.props.deleteGroceryItem(item)
-    this.props.fetchGroceryItems()
+    // this.props.fetchGroceryItems()
   }
 
   render() {

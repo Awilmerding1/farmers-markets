@@ -6,7 +6,6 @@ const GroceryItem = ({groceryItem, deleteGroceryItem}) => {
 
   const deleteItem = (event) => {
     event.preventDefault()
-  
     deleteGroceryItem(groceryItem)
   }
 

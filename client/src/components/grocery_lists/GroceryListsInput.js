@@ -20,7 +20,9 @@ class GroceryListsInput extends Component {
     text: '',
   });
   const item = {description: this.state.text, farmers_market_id: this.props.marketId}
+
   this.props.addGroceryItem(item)
+
 }
 
   render() {
