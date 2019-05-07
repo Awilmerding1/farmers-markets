@@ -4,8 +4,6 @@ import GroceryList from '../components/grocery_lists/GroceryList'
 import {fetchGroceryItems} from '../actions/fetchGroceryItems'
 import {addGroceryItem} from '../actions/addGroceryItem'
 import {deleteGroceryItem} from '../actions/deleteGroceryItem'
-
-
 import { connect } from 'react-redux';
 
 class GroceryListsContainer extends Component {
@@ -22,6 +20,7 @@ class GroceryListsContainer extends Component {
   }
 
   render() {
+
     return (
       <div>
         <div><GroceryListsInput addGroceryItem={this.addGroceryItem}  marketId={this.props.farmersMarket.id}/></div>

@@ -10,6 +10,7 @@ const GroceryList = ({groceryList, deleteGroceryItem, marketId}) => {
        const mapGroceryList = associatedMarkets.map((groceryItem, index) => {
          return <GroceryItem key={groceryItem.id} deleteGroceryItem={deleteGroceryItem} groceryItem={groceryItem} />
        })
+    
     return (
       <div>
       <ul className="groceryList">

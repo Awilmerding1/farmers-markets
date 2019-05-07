@@ -5,7 +5,6 @@ import SearchMarkets from '../search/SearchMarkets'
 const FarmersMarkets = ({ farmersMarkets, searchParams }) => {
 
     const marketCount = farmersMarkets.length
-
   return (
       <div>
         <div>{(searchParams.searchParams.length > 0 || searchParams.zip !== "") ? <SearchMarkets searchParams={searchParams} marketCount={marketCount}/> : undefined}</div>

@@ -8,7 +8,7 @@ const FarmersMarket = ({farmersMarket}) => {
   const dayArray = []
   const dayValues = days.forEach(day => {if (farmersMarket[day] !== null && farmersMarket[day] !== "") {dayArray.push(day)}})
 
-
+          
   return (
   <div className= "marketSearchandList">
   <div></div>

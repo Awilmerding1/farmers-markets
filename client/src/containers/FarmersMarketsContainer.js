@@ -24,6 +24,8 @@ class FarmersMarketsContainer extends Component {
       this.props.fetchGroceryItems()
    }
 
+
+
   handleSubmit = (data) => {
     this.props.filterFetchFarmersMarkets(data)
   }
@@ -36,7 +38,6 @@ class FarmersMarketsContainer extends Component {
 
 
   render() {
-
     return (
       <div>
 
