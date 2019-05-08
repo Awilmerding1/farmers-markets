@@ -1,14 +1,14 @@
 import cuid from 'cuid';
-import React, { Component } from 'react';
+import React from 'react';
 import GroceryListsContainer from '../../containers/GroceryListsContainer'
 export const cuidFn = cuid;
 const FarmersMarket = ({farmersMarket}) => {
 
   const days = Object.keys(farmersMarket).filter(key => key === "monday" || key === "tuesday" || key === "wednesday" || key === "thursday" || key === "friday" || key === "saturday" || key === "sunday")
   const dayArray = []
-  const dayValues = days.forEach(day => {if (farmersMarket[day] !== null && farmersMarket[day] !== "") {dayArray.push(day)}})
+  days.forEach(day => {if (farmersMarket[day] !== null && farmersMarket[day] !== "") {dayArray.push(day)}})
 
-          
+
   return (
   <div className= "marketSearchandList">
   <div></div>

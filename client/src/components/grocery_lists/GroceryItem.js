@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+
 import React from 'react';
 
 const GroceryItem = ({groceryItem, deleteGroceryItem}) => {

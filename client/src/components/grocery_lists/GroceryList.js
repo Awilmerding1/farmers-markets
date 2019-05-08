@@ -1,8 +1,6 @@
 
 import React from 'react';
-import {fetchGroceryItems} from '../../actions/fetchGroceryItems'
 import GroceryItem from './GroceryItem';
-import { connect } from 'react-redux';
 
 const GroceryList = ({groceryList, deleteGroceryItem, marketId}) => {
 
@@ -10,7 +8,7 @@ const GroceryList = ({groceryList, deleteGroceryItem, marketId}) => {
        const mapGroceryList = associatedMarkets.map((groceryItem, index) => {
          return <GroceryItem key={groceryItem.id} deleteGroceryItem={deleteGroceryItem} groceryItem={groceryItem} />
        })
-    
+
     return (
       <div>
       <ul className="groceryList">

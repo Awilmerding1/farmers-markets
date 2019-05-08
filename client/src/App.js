@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import fetch from 'isomorphic-fetch';
 import { connect } from 'react-redux';
 import {fetchFarmersMarkets} from './actions/fetchFarmersMarkets'
 
@@ -19,12 +18,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('api/farmers_markets', {
-      accept: 'application/json',
-    })
-    .then(response => { return response.json()})
-    .then(responseJSON => {return responseJSON})
-    .then(farmersMarkets => this.setState({farmersMarkets: farmersMarkets}))
+    this.props.fetchFarmersMarkets()
+     .then(farmersMarkets => this.setState({farmersMarkets: farmersMarkets}))
   }
 
   render() {
